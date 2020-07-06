@@ -1,21 +1,22 @@
 //
-// Created by a on 7/5/20.
+// Created by a on 7/6/20.
 //
-#include "parssing.h"
+
+#include "Parssing.h"
 #include <string.h>
 #include <iostream>
 
 Parssing::Parssing(const char* command) {
 
 
-    char* str;
+    char* str = NULL;
     strcpy(str,command);
     char * pch;
-    pch = strtok (str," ,.-");
+    pch = strtok (str," ");
     while (pch != NULL)
     {
         m_params.push_back(pch);
-        pch = strtok (NULL, " ,.-");
+        pch = strtok (NULL, " ");
     }
     try
     {

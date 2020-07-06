@@ -1,11 +1,10 @@
 //
-// Created by a on 7/5/20.
+// Created by a on 7/6/20.
 //
-
 #include "cmd_reader.h"
 #include "cmd_writer.h"
-#include "parssing.h"
-#include "factorial.h"
+#include "Parssing.h"
+#include "Factorial.h"
 #include "Cmd.h"
 
 void Cmd::start() {

@@ -1,9 +1,9 @@
 //
-// Created by a on 7/5/20.
+// Created by a on 7/6/20.
 //
 
-#ifndef DNA_PARSSING_H
-#define DNA_PARSSING_H
+#ifndef SRC_PARSSING_H
+#define SRC_PARSSING_H
 
 #include <vector>
 
@@ -15,4 +15,4 @@ public:
     std::vector<char*> getParams();
 
 };
-#endif //DNA_PARSSING_H
+#endif //SRC_PARSSING_H

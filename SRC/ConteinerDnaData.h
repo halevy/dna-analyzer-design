@@ -1,17 +1,20 @@
 //
-// Created by a on 7/5/20.
+// Created by a on 7/6/20.
 //
 
-#ifndef AA_CONTEINERDNADATA_H
-#define AA_CONTEINERDNADATA_H
-
+#ifndef SRC_CONTEINERDNADATA_H
+#define SRC_CONTEINERDNADATA_H
 #include "DnaData.h"
-#include <vector>
+#include <map>
+
 class ConteinerDnaData{
 private:
-    std::vector<DnaData*> m_conteiner;
+    std::map<size_t ,char*> m_nameWithId;
+    std::map<char*,DnaData> m_nameWithDnaData;
+
 public:
-    std::vector<DnaData*> getConteiner();
-    void push_back(DnaData*);
+    ConteinerDnaData(const DnaData& dnaData);
+
+
 };
-#endif //AA_CONTEINERDNADATA_H
+#endif //SRC_CONTEINERDNADATA_H

@@ -1,8 +1,10 @@
 //
-// Created by a on 7/5/20.
+// Created by a on 7/6/20.
 //
 #include "ConteinerDnaData.h"
 
-void ConteinerDnaData::push_back(DnaData * dnadata) {
-    m_conteiner.push_back(dnadata);
+
+ConteinerDnaData::ConteinerDnaData(const DnaData& dnaData){
+    m_nameWithId.insert(std::pair<size_t ,char*>(dnaData.getId(),dnaData.getName()));
+    m_nameWithDnaData.insert(std::pair<char* ,DnaData>(dnaData.getName(),dnaData));
 }

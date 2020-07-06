@@ -1,12 +1,12 @@
 //
-// Created by a on 7/5/20.
+// Created by a on 7/6/20.
 //
 
-#ifndef DNA_CMD_H
-#define DNA_CMD_H
-
+#ifndef SRC_CMD_H
+#define SRC_CMD_H
 
 class Cmd{
-    void start();
+public:
+    static void start();
 };
-#endif //DNA_CMD_H
+#endif //SRC_CMD_H

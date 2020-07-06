@@ -1,10 +1,9 @@
 //
-// Created by a on 7/5/20.
+// Created by a on 7/6/20.
 //
 
-#ifndef DNA_FACTORIAL_H
-#define DNA_FACTORIAL_H
-
+#ifndef SRC_FACTORIAL_H
+#define SRC_FACTORIAL_H
 #include <vector>
 
 class Factorial{
@@ -13,4 +12,4 @@ public:
     Factorial(std::vector<char*> params);
     const char* getCommandOutput();
 };
-#endif //DNA_FACTORIAL_H
+#endif //SRC_FACTORIAL_H

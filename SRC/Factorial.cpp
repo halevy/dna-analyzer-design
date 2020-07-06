@@ -1,13 +1,13 @@
 //
-// Created by a on 7/5/20.
+// Created by a on 7/6/20.
 //
 
-
-#include "factorial.h"
+#include "Factorial.h"
 #include "string.h"
 #include "New.h"
 #include "Load.h"
-
+#include "Save.h"
+#include "cmd_writer.h"
 
 
 Factorial::Factorial(std::vector<char *> params) {
@@ -24,7 +24,7 @@ Factorial::Factorial(std::vector<char *> params) {
             m_commandOutput = commands[0]->run(params);
         }
     }
-    if(!strcmp(params[0],"load")){
+    else if(!strcmp(params[0],"load")){
         if(!flags[1]){
             commands[1] = new Load;
             m_commandOutput = commands[1]->run(params);
@@ -34,7 +34,7 @@ Factorial::Factorial(std::vector<char *> params) {
             m_commandOutput = commands[1]->run(params);
         }
     }
-    if(!strcmp(params[0],"save")){
+    else if(!strcmp(params[0],"save")){
         if(!flags[2]){
             commands[2] = new Save;
             m_commandOutput = commands[2]->run(params);
@@ -44,8 +44,12 @@ Factorial::Factorial(std::vector<char *> params) {
             m_commandOutput = commands[2]->run(params);
         }
     }
-
+    else{
+        CmdWriter cmdWriter;
+        cmdWriter.write("There is no such command");
+    }
 }
 const char* Factorial::getCommandOutput() {
     return m_commandOutput;
 }
+

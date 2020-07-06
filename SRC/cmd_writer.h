@@ -1,9 +1,10 @@
 //
-// Created by a on 7/5/20.
+// Created by a on 7/6/20.
 //
 
-#ifndef DNA_CMD_WRITER_H
-#define DNA_CMD_WRITER_H
+#ifndef SRC_CMD_WRITER_H
+#define SRC_CMD_WRITER_H
+
 #include "Iwriter.h"
 
 class CmdWriter: public Iwriter{
@@ -11,4 +12,4 @@ class CmdWriter: public Iwriter{
 public:
     void write(const char* resultCommand);
 };
-#endif //DNA_CMD_WRITER_H
+#endif //SRC_CMD_WRITER_H

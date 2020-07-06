@@ -1,9 +1,9 @@
 //
-// Created by a on 7/1/20.
+// Created by a on 7/6/20.
 //
 
-#ifndef DNA_FILE_WRITER_H
-#define DNA_FILE_WRITER_H
+#ifndef SRC_FILE_WRITER_H
+#define SRC_FILE_WRITER_H
 #include "Iwriter.h"
 
 class FileWriter:public Iwriter{
@@ -13,4 +13,5 @@ public:
     FileWriter(const char* fileName);
     void write(const char* dnaSequence);
 };
-#endif //DNA_FILE_WRITER_H
+
+#endif //SRC_FILE_WRITER_H

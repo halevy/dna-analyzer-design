@@ -1,15 +1,18 @@
 //
-// Created by a on 7/5/20.
+// Created by a on 7/6/20.
 //
 
-#ifndef DNA_ICOMMAND_H
-#define DNA_ICOMMAND_H
+#ifndef SRC_ICOMMAND_H
+#define SRC_ICOMMAND_H
 #include <vector>
 #include <iostream>
+#include "ConteinerDnaData.h"
+#include <string.h>
 
 class Icommand{
+
 public:
     virtual const char* run(std::vector<char*> params) = 0;
-};
 
-#endif //DNA_ICOMMAND_H
+};
+#endif //SRC_ICOMMAND_H
