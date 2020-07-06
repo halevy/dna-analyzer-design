@@ -1,10 +1,9 @@
 //
-// Created by a on 6/1/20.
+// Created by a on 7/6/20.
 //
 
-#ifndef DNA_DNASEQUENCE_H
-#define DNA_DNASEQUENCE_H
-
+#ifndef SRC_DNASEQUENCE_H
+#define SRC_DNASEQUENCE_H
 
 #include <string.h>
 #include <iostream>
@@ -48,7 +47,7 @@ public:
     friend std::ostream& operator<<(std::ostream& os, const DnaSequence& dnaSequence);
     ~DnaSequence();
     const char* GetData()const;
-    DnaSequence slice(size_t start,size_t end);
+    DnaSequence slice(size_t start,size_t end)const ;
     DnaSequence Pairing();
     long find(const DnaSequence& subDnaSequence,long Index = 0);
     long Count(const DnaSequence& subDnaSequence);
@@ -59,4 +58,4 @@ public:
 bool operator==(const DnaSequence& dnaSequence1, const DnaSequence& dnaSequence2);
 bool operator!=(const DnaSequence& dnaSequence1, const DnaSequence& dnaSequence2);
 
-#endif //DNA_DNASEQUENCE_H
+#endif //SRC_DNASEQUENCE_H

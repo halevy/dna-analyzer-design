@@ -1,7 +1,6 @@
 //
-// Created by a on 6/1/20.
+// Created by a on 7/6/20.
 //
-
 #include "dnasequence.h"
 
 
@@ -56,10 +55,10 @@ DnaSequence::Nucleotide* DnaSequence::InitDna(const char* dnaSequence)
 }
 
 DnaSequence::DnaSequence(const char* dnaSequence):m_data(InitDna(dnaSequence)),
-m_length(strlen(dnaSequence)){}
+                                                  m_length(strlen(dnaSequence)){}
 
 DnaSequence::DnaSequence(const std::string& dnaSequence):m_data(InitDna(dnaSequence.c_str())),
-m_length(dnaSequence.length()){}
+                                                         m_length(dnaSequence.length()){}
 
 DnaSequence::DnaSequence(const size_t size){
     char* temp = new char[size];
@@ -99,14 +98,14 @@ DnaSequence& DnaSequence::operator=(const DnaSequence& dnaSequence) {
 }
 
 DnaSequence::DnaSequence(const DnaSequence& dnaSequence):
-m_data(InitDna((char*)(dnaSequence.m_data))),m_length(dnaSequence.m_length){}
+        m_data(InitDna((char*)(dnaSequence.m_data))),m_length(dnaSequence.m_length){}
 
 
 size_t DnaSequence::length()const
 {
     return m_length;
 }
-DnaSequence DnaSequence::slice(size_t start, size_t end)
+DnaSequence DnaSequence::slice(size_t start, size_t end)const
 {
     DnaSequence dnaSequence(end-start-1);
     for(size_t i = 0; i < dnaSequence.length() ; i++){
@@ -215,7 +214,7 @@ DnaSequence::Nucleotide& DnaSequence::operator[](size_t index) const
 }
 DnaSequence::~DnaSequence()
 {
-        delete[] m_data;
+    delete[] m_data;
 }
 bool operator==(const DnaSequence& dnaSequence1, const DnaSequence& dnaSequence2)
 {
