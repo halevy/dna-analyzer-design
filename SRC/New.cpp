@@ -1,5 +1,5 @@
 //
-// Created by a on 7/5/20.
+// Created by a on 7/6/20.
 //
 #include "New.h"
 #include <vector>
@@ -16,10 +16,14 @@ const char* New::run(std::vector<char *> params) {
     }
 
     if(params.size() == 3){
-
-        m_conteiner.push_back(new DnaData(params[1],params[2]));
+        DnaData dnaData(params[1],params[2],'0');
+        ConteinerDnaData conteinerDnaData(dnaData);
+        return getIdNameDnasequence(dnaData);
     }
     else{
-        m_conteiner.push_back(new DnaData(params[1],""));
+        DnaData dnaData(params[1],"",'0');
+        ConteinerDnaData conteinerDnaData(dnaData);
+        return getIdNameDnasequence(dnaData);
     }
+
 }

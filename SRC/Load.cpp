@@ -1,7 +1,6 @@
 //
-// Created by a on 7/5/20.
+// Created by a on 7/6/20.
 //
-
 #include "Load.h"
 #include "file_reader.h"
 
@@ -17,11 +16,15 @@ const char* Load::run(std::vector<char*> params) {
     }
     FileReader fileReader(params[1]);
     const char* result = fileReader.read();
-    if(params.size() == 3){
 
-        m_conteiner.push_back(new DnaData(result,params[2]));
+    if(params.size() == 3){
+        DnaData dnaData(result,params[2],'-');
+        ConteinerDnaData conteinerDnaData(dnaData);
+        return getIdNameDnasequence(dnaData);
     }
     else{
-        m_conteiner.push_back(new DnaData(result,""));
+        DnaData dnaData(result,"",'-');
+        ConteinerDnaData conteinerDnaData(dnaData);
+        return getIdNameDnasequence(dnaData);
     }
 }
