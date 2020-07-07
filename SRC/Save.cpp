@@ -22,7 +22,7 @@ const char* Save::run(std::vector<char *> params) {
         fileWriter.write(params[1]);
 
     }
-    return "";
+    return NULL;
 
 
 }
