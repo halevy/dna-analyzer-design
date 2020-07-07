@@ -4,9 +4,11 @@
 
 #ifndef SRC_IREADER_H
 #define SRC_IREADER_H
+
+#include <string>
 class Ireader{
 public:
-    virtual const char* read() = 0;
-
+    virtual std::string read() = 0;
+    virtual ~Ireader(){}
 };
 #endif //SRC_IREADER_H

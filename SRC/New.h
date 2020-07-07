@@ -8,6 +8,6 @@
 #include "Creation.h"
 class New:public Creation{
 public:
-    const char* run(std::vector<char*> params);
+    void run(std::vector<std::string> params);
 };
 #endif //SRC_NEW_H

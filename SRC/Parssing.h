@@ -6,13 +6,15 @@
 #define SRC_PARSSING_H
 
 #include <vector>
+#include <string>
+#include <sstream>
 
 class Parssing{
 private:
-    std::vector<char*> m_params;
+    std::vector<std::string> m_params;
 public:
-    Parssing(const char* command);
-    std::vector<char*> getParams();
+    Parssing(const std::string& command);
+    std::vector<std::string> getParams();
 
 };
 #endif //SRC_PARSSING_H

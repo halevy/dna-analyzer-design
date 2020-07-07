@@ -3,20 +3,14 @@
 //
 
 #include "Parssing.h"
-#include <string.h>
 #include <iostream>
 
-Parssing::Parssing(const char* command) {
+Parssing::Parssing(const std::string& command) {
 
-
-    char* str = NULL;
-    strcpy(str,command);
-    char * pch;
-    pch = strtok (str," ");
-    while (pch != NULL)
-    {
-        m_params.push_back(pch);
-        pch = strtok (NULL, " ");
+    std::stringstream str(command);
+    std::string temp;
+    while(str >> temp){
+        m_params.push_back(temp);
     }
     try
     {
@@ -29,6 +23,6 @@ Parssing::Parssing(const char* command) {
     }
 
 }
-std::vector<char*> Parssing::getParams() {
+std::vector<std::string> Parssing::getParams() {
     return m_params;
 }

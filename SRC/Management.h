@@ -7,6 +7,6 @@
 #include "Icommand.h"
 class Management:public Icommand{
 public:
-    const char* run(std::vector<char*> params) = 0;
+    void run(std::vector<std::string> params) = 0;
 };
 #endif //SRC_MANAGEMENT_H

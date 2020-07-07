@@ -6,10 +6,11 @@
 #define SRC_CREATION_H
 
 #include "Icommand.h"
+#include <iostream>
 
 class Creation:public Icommand{
 public:
-    const char* run(std::vector<char*> params) = 0;
-    const char* getIdNameDnasequence(const DnaData& dnaData);
+     void run(std::vector<std::string> params) = 0;
+     static void print(const DnaData& dnaData);
 };
 #endif //SRC_CREATION_H

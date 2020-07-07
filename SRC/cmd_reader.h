@@ -10,6 +10,6 @@
 class CmdReader: public Ireader{
 
 public:
-    const char* read();
+    std::string read();
 };
 #endif //SRC_CMD_READER_H

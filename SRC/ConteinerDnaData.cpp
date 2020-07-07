@@ -5,6 +5,6 @@
 
 
 ConteinerDnaData::ConteinerDnaData(const DnaData& dnaData){
-    m_nameWithId.insert(std::pair<size_t ,char*>(dnaData.getId(),dnaData.getName()));
-    m_nameWithDnaData.insert(std::pair<char* ,DnaData>(dnaData.getName(),dnaData));
+    m_nameWithId.insert(std::pair<size_t ,std::string>(dnaData.getId(),dnaData.getName()));
+    m_nameWithDnaData.insert(std::pair<std::string ,DnaData>(dnaData.getName(),dnaData));
 }

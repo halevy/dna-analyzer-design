@@ -8,10 +8,10 @@
 
 class FileReader:public Ireader{
 private:
-    const char* m_fileName;
+    std::string m_fileName;
 public:
-    FileReader(const char* fileName);
-    const char* read();
+    FileReader(const std::string& fileName);
+    std::string read();
 };
 
 #endif //SRC_FILE_READER_H

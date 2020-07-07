@@ -1,6 +1,7 @@
 #include <iostream>
 
 #include "dnasequence.h"
+#include "Cmd.h"
 int main() {
 
     DnaSequence dna1("AT");
@@ -50,6 +51,8 @@ int main() {
         std::cout << *it;
     }
     std::cout << std::endl;
+    Cmd cmd;
+    cmd.start();
 
     return 0;
 }

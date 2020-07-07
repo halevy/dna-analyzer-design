@@ -47,7 +47,7 @@ public:
     friend std::ostream& operator<<(std::ostream& os, const DnaSequence& dnaSequence);
     ~DnaSequence();
     const char* GetData()const;
-    DnaSequence slice(size_t start,size_t end)const ;
+    DnaSequence slice(size_t start,size_t end)const;
     DnaSequence Pairing();
     long find(const DnaSequence& subDnaSequence,long Index = 0);
     long Count(const DnaSequence& subDnaSequence);

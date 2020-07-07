@@ -7,6 +7,6 @@
 #include "Creation.h"
 class Load:public Creation{
 public:
-    const char* run(std::vector<char*> params);
+    void run(std::vector<std::string> params);
 };
 #endif //SRC_LOAD_H

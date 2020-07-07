@@ -4,14 +4,16 @@
 
 #ifndef SRC_FILE_WRITER_H
 #define SRC_FILE_WRITER_H
+
+#include <string>
 #include "Iwriter.h"
 
 class FileWriter:public Iwriter{
 private:
-    const char* m_fileName;
+    std::string m_fileName;
 public:
-    FileWriter(const char* fileName);
-    void write(const char* dnaSequence);
+    FileWriter(const std::string& fileName);
+    void write(const std::string& dnaSequence);
 };
 
 #endif //SRC_FILE_WRITER_H

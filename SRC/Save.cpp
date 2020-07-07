@@ -3,7 +3,7 @@
 //
 #include "Save.h"
 #include "file_writer.h"
-const char* Save::run(std::vector<char *> params) {
+void Save::run(std::vector<std::string> params) {
     try
     {
         if(params.size() > 3 )
@@ -18,11 +18,12 @@ const char* Save::run(std::vector<char *> params) {
         fileWriter.write(params[1]);
     }
     else{
-        FileWriter fileWriter(strcat(params[1],".rawdna"));
+        std::string typeFile = ".rawdna";
+        FileWriter fileWriter( params[1] += typeFile);
         fileWriter.write(params[1]);
 
     }
-    return NULL;
+
 
 
 }

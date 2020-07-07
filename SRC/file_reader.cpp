@@ -5,10 +5,10 @@
 #include <fstream>
 #include <iostream>
 
-FileReader::FileReader(const char* fileName):m_fileName(fileName){}
+FileReader::FileReader(const std::string& fileName):m_fileName(fileName){}
 
-const char* FileReader::read(){
-    std::ifstream file(m_fileName);
+std::string FileReader::read(){
+    std::ifstream file(m_fileName.c_str());
     std::string line;
     std::string new_line;
     try {
@@ -21,6 +21,6 @@ const char* FileReader::read(){
         std::cout << "Exception opening/reading/closing file\n";
     }
 
-    return new_line.c_str();
+    return new_line;
 }
 

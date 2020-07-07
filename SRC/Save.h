@@ -9,6 +9,6 @@
 #include "Management.h"
 class Save:public Management{
 public:
-    const char* run(std::vector<char*> params);
+    void run(std::vector<std::string> params);
 };
 #endif //SRC_SAVE_H

@@ -9,8 +9,8 @@
 
 class ConteinerDnaData{
 private:
-    std::map<size_t ,char*> m_nameWithId;
-    std::map<char*,DnaData> m_nameWithDnaData;
+    std::map<size_t ,std::string > m_nameWithId;
+    std::map<std::string,DnaData> m_nameWithDnaData;
 
 public:
     ConteinerDnaData(const DnaData& dnaData);

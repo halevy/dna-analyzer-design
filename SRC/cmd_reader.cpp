@@ -4,9 +4,9 @@
 #include "cmd_reader.h"
 #include <iostream>
 
-const char* CmdReader::read() {
-    std::cout << "\n>cmd>>>";
-    char* command;
-    std::cin >> command;
+std::string CmdReader::read() {
+    std::cout << ">cmd>>>";
+    std::string command;
+    getline(std::cin,command);
     return command;
 }

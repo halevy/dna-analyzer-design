@@ -4,7 +4,7 @@
 #include "Load.h"
 #include "file_reader.h"
 
-const char* Load::run(std::vector<char*> params) {
+void Load::run(std::vector<std::string> params) {
     try
     {
         if(params.size() > 3 || (params.size() == 3 && params[2][0] != '@'))
@@ -15,16 +15,17 @@ const char* Load::run(std::vector<char*> params) {
         std::cout<<"Exception!"<<e.what()<<std::endl;
     }
     FileReader fileReader(params[1]);
-    const char* result = fileReader.read();
+    std::string result = fileReader.read();
 
     if(params.size() == 3){
         DnaData dnaData(result,params[2],'-');
         ConteinerDnaData conteinerDnaData(dnaData);
-        return getIdNameDnasequence(dnaData);
+        print(dnaData);
     }
     else{
-        DnaData dnaData(result,"",'-');
+
+        DnaData dnaData(result,params[1],'-');
         ConteinerDnaData conteinerDnaData(dnaData);
-        return getIdNameDnasequence(dnaData);
+        print(dnaData);
     }
 }

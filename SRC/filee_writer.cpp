@@ -5,12 +5,12 @@
 #include <fstream>
 #include <iostream>
 
-FileWriter::FileWriter(const char* fileName):m_fileName(fileName){}
+FileWriter::FileWriter(const std::string& fileName):m_fileName(fileName){}
 
-void FileWriter::write(const char* dnaSequence){
+void FileWriter::write(const std::string& dnaSequence){
     try{
         std::ofstream myfile;
-        myfile.open (m_fileName);
+        myfile.open (m_fileName.c_str());
         myfile << dnaSequence <<"\n";
         myfile.close();
     }

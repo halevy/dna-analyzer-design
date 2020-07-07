@@ -6,17 +6,16 @@
 #include "Parssing.h"
 #include "Factorial.h"
 #include "Cmd.h"
+#include <iostream>
 
 void Cmd::start() {
-    const char* result;
+    std::string result;
     CmdReader cmdReader;
-    CmdWriter cmdWriter;
-    int count = 10;
+    int count = 2;
     while (count){
         result = cmdReader.read();
         Parssing parssing(result);
         Factorial factorial(parssing.getParams());
-        cmdWriter.write(factorial.getCommandOutput());
         count--;
     }
 }
