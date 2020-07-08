@@ -4,7 +4,7 @@
 #include "Cmd.h"
 int main() {
 
-    DnaSequence dna1("AT");
+    /*DnaSequence dna1("AT");
     std::cout << dna1 << std::endl;
     std::cout << dna1[1] << std::endl;
     std::string str = "ACT";
@@ -50,7 +50,7 @@ int main() {
     for (std::list<DnaSequence>::iterator it = Consensus2.begin(); it != Consensus2.end(); ++it){
         std::cout << *it;
     }
-    std::cout << std::endl;
+    std::cout << std::endl;*/
     Cmd cmd;
     cmd.start();
 

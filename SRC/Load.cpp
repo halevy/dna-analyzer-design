@@ -16,16 +16,15 @@ void Load::run(std::vector<std::string> params) {
     }
     FileReader fileReader(params[1]);
     std::string result = fileReader.read();
-
     if(params.size() == 3){
         DnaData dnaData(result,params[2],'-');
-        ConteinerDnaData conteinerDnaData(dnaData);
+        ContainerDnaData::getContainer().Insert(&dnaData);
         print(dnaData);
     }
     else{
-
-        DnaData dnaData(result,params[1],'-');
-        ConteinerDnaData conteinerDnaData(dnaData);
+        size_t index = params[1].find('.');
+        DnaData dnaData(result,params[1].erase(index,params[1].length()),'-');
+        ContainerDnaData::getContainer().Insert(&dnaData);
         print(dnaData);
     }
 }

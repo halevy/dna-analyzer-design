@@ -47,6 +47,7 @@ DnaSequence::Nucleotide* DnaSequence::InitDna(const char* dnaSequence)
     catch(std::invalid_argument& e)
     {
         std::cout<<"Exception!"<<e.what()<<std::endl;
+        throw ;
     }
     char* dna = strcpy(new char[strlen(dnaSequence)+1],dnaSequence);
     return (Nucleotide*)dna;

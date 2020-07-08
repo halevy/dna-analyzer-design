@@ -7,13 +7,14 @@
 #include "New.h"
 #include "Load.h"
 #include "Save.h"
+#include "Dup.h"
 #include "cmd_writer.h"
 
 
 Factorial::Factorial(std::vector<std::string> params) {
 
-    std::vector<Icommand*> commands(3);
-    int flags[3] = {0,0,0};
+    std::vector<Icommand*> commands(4);
+    int flags[4] = {0,0,0,0};
     if(!strcmp(params[0].c_str(),"new")){
         if(!flags[0]){
             commands[0] = new New;
@@ -34,14 +35,24 @@ Factorial::Factorial(std::vector<std::string> params) {
             commands[1]->run(params);
         }
     }
-    else if(!strcmp(params[0].c_str(),"save")){
+    else if(!strcmp(params[0].c_str(),"dup")){
         if(!flags[2]){
-            commands[2] = new Save;
+            commands[2] = new Dup;
             commands[2]->run(params);
             flags[2] = 1;
         }
         else{
             commands[2]->run(params);
+        }
+    }
+    else if(!strcmp(params[0].c_str(),"save")){
+        if(!flags[3]){
+            commands[3] = new Save;
+            commands[3]->run(params);
+            flags[3] = 1;
+        }
+        else{
+            commands[3]->run(params);
         }
     }
     else{

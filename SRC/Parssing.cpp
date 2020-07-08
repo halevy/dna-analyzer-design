@@ -22,6 +22,7 @@ Parssing::Parssing(const std::string& command) {
         std::cout<<"Exception!"<<e.what()<<std::endl;
     }
 
+
 }
 std::vector<std::string> Parssing::getParams() {
     return m_params;

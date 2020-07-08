@@ -6,6 +6,7 @@
 #include <sstream>
 #include "dnasequence.h"
 
+
 void New::run(std::vector<std::string> params) {
     try
     {
@@ -27,7 +28,7 @@ void New::run(std::vector<std::string> params) {
                 params[2].erase(0,1);
             }
             DnaData dnaData(params[1],params[2],'0');
-            ConteinerDnaData conteinerDnaData(dnaData);
+            ContainerDnaData::getContainer().Insert(&dnaData);
             print(dnaData);
         }
         else{
@@ -35,7 +36,7 @@ void New::run(std::vector<std::string> params) {
             std::stringstream ss;
             ss << "seq" << defaultNum ;
             DnaData dnaData(params[1],ss.str(),'0');
-            ConteinerDnaData conteinerDnaData(dnaData);
+            ContainerDnaData::getContainer().Insert(&dnaData);
             print(dnaData);
             defaultNum++;
         }
