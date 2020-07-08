@@ -8,19 +8,19 @@
 FileReader::FileReader(const std::string& fileName):m_fileName(fileName){}
 
 std::string FileReader::read(){
-    std::ifstream file(m_fileName.c_str());
-    std::string line;
-    std::string new_line;
-    try {
-        while (getline(file, line)){
-            new_line+=line;
-        }
-        file.close();
-    }
-    catch (std::ifstream::failure& e) {
-        std::cout << "Exception opening/reading/closing file\n";
-    }
 
-    return new_line;
+
+    std::ifstream file;
+    std::string data;
+    try {
+        file.open(m_fileName.c_str());
+        while(getline(file, data));
+    }
+    catch (const std::ofstream::failure &exeption){
+        std::cout << exeption.what();
+    }
+    file.close();
+    return data;
+
 }
 
