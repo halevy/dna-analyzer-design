@@ -7,16 +7,18 @@
 #include "Factorial.h"
 #include "Cmd.h"
 #include <iostream>
+#include "ContainerDnaData.h"
 
 void Cmd::start() {
     std::string result;
     CmdReader cmdReader;
-    int count = 2;
+    int count = 3;
     while (count){
         result = cmdReader.read();
         Parssing parssing(result);
         Factorial factorial(parssing.getParams());
         count--;
     }
+
 }
 

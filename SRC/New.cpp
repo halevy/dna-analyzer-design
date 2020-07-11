@@ -27,9 +27,9 @@ void New::run(std::vector<std::string> params) {
             else{
                 params[2].erase(0,1);
             }
-            DnaData dnaData(params[1],params[2],'0');
-            ContainerDnaData::getContainer().Insert(&dnaData);
-            print(dnaData);
+            DnaData* dnaData = new DnaData(params[1],params[2],'0');
+            ContainerDnaData::getContainer().Insert(dnaData);
+            print(*dnaData);
         }
         else{
             static size_t defaultNum = 1;

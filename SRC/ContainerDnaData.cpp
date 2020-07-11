@@ -15,6 +15,9 @@ DnaData* ContainerDnaData::FindDnaData(size_t id) {
 size_t ContainerDnaData::FindId(const std::string &name) {
     return m_nameWithId[name];
 }
+size_t ContainerDnaData::getSize() {
+    return m_idWithDnaData.size();
+}
 ContainerDnaData& ContainerDnaData::getContainer() {
     static ContainerDnaData containerDnaData;
     return containerDnaData;

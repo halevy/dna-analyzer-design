@@ -17,6 +17,7 @@ public:
     void Insert(DnaData* dnaData);
     DnaData* FindDnaData (size_t id);
     size_t FindId(const std::string& name);
+    size_t getSize();
     static ContainerDnaData& getContainer();
 };
 #endif //SRC_CONTAINERDNADATA_H
