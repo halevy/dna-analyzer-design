@@ -35,9 +35,9 @@ void New::run(std::vector<std::string> params) {
             static size_t defaultNum = 1;
             std::stringstream ss;
             ss << "seq" << defaultNum ;
-            DnaData dnaData(params[1],ss.str(),'0');
-            ContainerDnaData::getContainer().Insert(&dnaData);
-            print(dnaData);
+            DnaData* dnaData = new DnaData(params[1],ss.str(),'0');
+            ContainerDnaData::getContainer().Insert(dnaData);
+            print(*dnaData);
             defaultNum++;
         }
     }

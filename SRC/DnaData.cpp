@@ -13,13 +13,6 @@ DnaData::DnaData(const std::string& dna, const std::string& name,char status):m_
 m_id(++m_initializing_id),m_name(name) {
 
 }
-DnaData::DnaData(const DnaData &dnaData):m_dna(dnaData.m_dna),m_status('0'),m_id(++m_initializing_id){
-    static size_t defaultNum = 1;
-    std::stringstream ss;
-    ss << dnaData.m_name <<'_' << defaultNum ;
-    m_name = ss.str();
-    defaultNum++;
-}
 const DnaSequence& DnaData::getDna() const{
     return m_dna;
 }

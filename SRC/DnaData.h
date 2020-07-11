@@ -17,7 +17,6 @@ private:
 
 public:
     DnaData(const std::string& dna,const std::string& name,char status);
-    DnaData(const DnaData& dnaData);
     const DnaSequence& getDna()const;
     const std::string& getName()const;
     void setName(const std::string& name);

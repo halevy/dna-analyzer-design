@@ -23,13 +23,13 @@ void Save::run(std::vector<std::string> params) {
         size_t id;
         f >> id;
         dna = ContainerDnaData::getContainer().FindDnaData(id)->getDna().GetData();
-        std::cout<<"dna"<<dna<<std::endl;
+
     }
     else{
         params[1].erase(0,1);
         size_t id = ContainerDnaData::getContainer().FindId(params[1]);
         dna = ContainerDnaData::getContainer().FindDnaData(id)->getDna().GetData();
-        std::cout<<"dna"<<dna<<std::endl;
+
     }
     if(params.size() == 2){
         std::string typeFile = ".rawdna";

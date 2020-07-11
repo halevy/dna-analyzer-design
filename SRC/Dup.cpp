@@ -24,12 +24,21 @@ void Dup::run(std::vector<std::string> params) {
     std::stringstream f(params[1]);
     size_t id;
     f >> id;
-    DnaData newDnaData(*(ContainerDnaData::getContainer().FindDnaData(id)));
+    DnaData* dnaData = ContainerDnaData::getContainer().FindDnaData(id);
+    std::string name;
     if(params.size() == 3){
-        newDnaData.setName(params[2]);
+        name = params[2];
     }
-    ContainerDnaData::getContainer().Insert(&newDnaData);
-    print(newDnaData);
+    else{
+        static size_t defaultNum = 1;
+        std::stringstream ss;
+        ss << dnaData->getName() <<'_' << defaultNum ;
+        name = ss.str();
+        defaultNum++;
+    }
+    DnaData* newDnaData = new DnaData(dnaData->getDna().GetData(),name,'0');
+    ContainerDnaData::getContainer().Insert(newDnaData);
+    print(*newDnaData);
 
 
 
