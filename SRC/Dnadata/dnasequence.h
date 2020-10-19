@@ -49,7 +49,7 @@ public:
     const char* GetData()const;
     DnaSequence slice(size_t start,size_t end)const;
     DnaSequence Pairing();
-    long find(const DnaSequence& subDnaSequence,long Index = 0);
+    long find(const DnaSequence& subDnaSequence,long Index = 0)const;
     long Count(const DnaSequence& subDnaSequence);
     std::list<long> FindAll(const DnaSequence& subDnaSequence);
     std::list<DnaSequence> FindConsensus();

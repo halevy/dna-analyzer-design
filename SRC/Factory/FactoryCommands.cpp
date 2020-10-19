@@ -7,6 +7,8 @@
 #include "../Commands/Load.h"
 #include "../Commands/Save.h"
 #include "../Commands/Dup.h"
+#include "../Commands/Len.h"
+#include "../Commands/Find.h"
 
 std::map<const std::string,Icommand*> FactoryCommands::m_commands = initCommands();
 
@@ -17,6 +19,8 @@ std::map<const std::string,Icommand*> FactoryCommands::initCommands() {
     temp.insert(std::pair<const std::string,Icommand*>("dup",new Dup));
     temp.insert(std::pair<const std::string,Icommand*>("save",new Save));
     temp.insert(std::pair<const std::string,Icommand*>("load",new Load));
+    temp.insert(std::pair<const std::string,Icommand*>("len",new Len));
+    temp.insert(std::pair<const std::string,Icommand*>("find",new Find));
 
     return temp;
 }

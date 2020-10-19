@@ -137,7 +137,7 @@ DnaSequence DnaSequence::Pairing()
     }
     return NewDnaSequence;
 }
-long DnaSequence::find(const DnaSequence& subDnaSequence,long Index)
+long DnaSequence::find(const DnaSequence& subDnaSequence,long Index)const
 {
 
     const char* result = strstr(GetData()+Index,subDnaSequence.GetData());
