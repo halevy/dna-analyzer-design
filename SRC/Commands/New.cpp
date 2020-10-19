@@ -4,7 +4,7 @@
 #include "New.h"
 #include <vector>
 #include <sstream>
-#include "dnasequence.h"
+#include "../Dnadata/dnasequence.h"
 
 
 void New::run(std::vector<std::string> params) {

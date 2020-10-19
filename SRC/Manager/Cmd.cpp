@@ -1,13 +1,13 @@
 //
 // Created by a on 7/6/20.
 //
-#include "cmd_reader.h"
-#include "cmd_writer.h"
+#include "../Reader/cmd_reader.h"
+#include "../Writer/cmd_writer.h"
 #include "Parssing.h"
-#include "Factorial.h"
 #include "Cmd.h"
 #include <iostream>
-#include "ContainerDnaData.h"
+#include "../Dnadata/ContainerDnaData.h"
+#include "../Factory/Factorial.h"
 
 void Cmd::start() {
     std::string result;
@@ -16,7 +16,9 @@ void Cmd::start() {
     while (count){
         result = cmdReader.read();
         Parssing parssing(result);
-        Factorial factorial(parssing.getParams());
+        Factorial factorial;
+        std::vector<std::string> params = parssing.getParams();
+        factorial.getCommand(params[0])->run(params);
         count--;
     }
 

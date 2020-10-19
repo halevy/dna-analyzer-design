@@ -6,7 +6,7 @@
 #define SRC_ICOMMAND_H
 #include <vector>
 #include <iostream>
-#include "ContainerDnaData.h"
+#include "../Dnadata/ContainerDnaData.h"
 #include <string>
 
 class Icommand{

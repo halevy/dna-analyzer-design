@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "dnasequence.h"
+#include "../Dnadata/dnasequence.h"
 #include "Cmd.h"
 int main() {
 

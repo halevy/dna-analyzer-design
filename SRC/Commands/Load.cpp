@@ -2,7 +2,7 @@
 // Created by a on 7/6/20.
 //
 #include "Load.h"
-#include "file_reader.h"
+#include "../Reader/file_reader.h"
 
 void Load::run(std::vector<std::string> params) {
     try

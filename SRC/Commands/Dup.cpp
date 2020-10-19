@@ -5,7 +5,7 @@
 #include "Dup.h"
 #include <vector>
 #include <sstream>
-#include "dnasequence.h"
+#include "../Dnadata/dnasequence.h"
 
 
 void Dup::run(std::vector<std::string> params) {
