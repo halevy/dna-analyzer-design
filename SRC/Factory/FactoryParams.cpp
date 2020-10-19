@@ -8,6 +8,8 @@
 #include "../Params/LoadParams.h"
 #include "../Params/LenParams.h"
 #include "../Params/FindParams.h"
+#include "../Params/CountParams.h"
+#include "../Params/FindAllParams.h"
 
 std::map<const std::string,Iparams*> FactoryParams::m_params = initParams();
 
@@ -19,6 +21,8 @@ std::map<const std::string,Iparams*> FactoryParams::initParams() {
     temp.insert(std::pair<const std::string,Iparams*>("load",new LoadParams));
     temp.insert(std::pair<const std::string,Iparams*>("len",new LenParams));
     temp.insert(std::pair<const std::string,Iparams*>("find",new FindParams));
+    temp.insert(std::pair<const std::string,Iparams*>("count",new CountParams));
+    temp.insert(std::pair<const std::string,Iparams*>("findall",new FindAllParams));
 
     return temp;
 }

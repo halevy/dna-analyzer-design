@@ -21,10 +21,16 @@ void Cmd::start() {
         result = cmdReader.read();
         Parssing parssing(result);
         params = parssing.getParams();
-        if(factoryParams.getParam(params[0])->isValid(params)){
+        try{
+            factoryParams.getParam(params[0])->isValid(params);
             factoryCommands.getCommand(params[0])->run(params);
             count--;
         }
+        catch(std::invalid_argument& e)
+        {
+            std::cout<<"Exception!"<<e.what()<<std::endl;
+        }
+
     }
 
 }

@@ -1,0 +1,19 @@
+//
+// Created by a on 9/22/20.
+//
+
+#ifndef DNA_ANALYSISPARAMS_H
+#define DNA_ANALYSISPARAMS_H
+
+
+#include "Iparams.h"
+
+class AnalysisParams : public Iparams{
+public:
+    bool isValid(std::vector<std::string>& params) = 0;
+    bool isHashTag(const std::string& idByString);
+    bool validSize(size_t size,unsigned int desirableSize);
+};
+
+
+#endif //DNA_ANALYSISPARAMS_H

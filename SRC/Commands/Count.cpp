@@ -2,19 +2,17 @@
 // Created by a on 9/22/20.
 //
 
-#include "Find.h"
+#include "Count.h"
 
-void Find::run(std::vector<std::string> params) {
+void Count::run(std::vector<std::string> params) {
 
     try{
         DnaData* dnaData = Analysis::getDnaDataByString(params[1]);
-        std::cout<< dnaData->getDna().find(params[2]) + 1 <<std::endl;
+        std::cout<< dnaData->getDna().Count(params[2]) <<std::endl;
     }
     catch(std::invalid_argument& e)
     {
         return;
 
     }
-
-
 }

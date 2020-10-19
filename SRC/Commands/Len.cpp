@@ -7,9 +7,6 @@
 
 void Len::run(std::vector<std::string> params) {
 
-    std::stringstream f(params[1]);
-    size_t id;
-    f >> id;
-    DnaData* dnaData = ContainerDnaData::getContainer().FindDnaData(id);
+    DnaData* dnaData = Analysis::getDnaDataByString(params[1]);
     std::cout<< dnaData->getDna().length() <<std::endl;
 }

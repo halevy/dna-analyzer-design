@@ -146,7 +146,7 @@ long DnaSequence::find(const DnaSequence& subDnaSequence,long Index)const
     return (result-GetData());
 
 }
-long DnaSequence::Count(const DnaSequence& subDnaSequence)
+long DnaSequence::Count(const DnaSequence& subDnaSequence)const
 {
 
     long counter = 0;
@@ -158,7 +158,7 @@ long DnaSequence::Count(const DnaSequence& subDnaSequence)
     return counter;
 
 }
-std::list<long> DnaSequence::FindAll(const DnaSequence& subDnaSequence)
+std::list<long> DnaSequence::FindAll(const DnaSequence& subDnaSequence)const
 {
     std::list<long> indexes;
     for (long Index = find(subDnaSequence); Index != -1 && Index + subDnaSequence.length() <= length();

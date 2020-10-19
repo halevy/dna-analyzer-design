@@ -12,6 +12,7 @@
 class Analysis : public Icommand{
 public:
     void run(std::vector<std::string> params) = 0;
+    DnaData* getDnaDataByString(const std::string& idByString);
 };
 
 
