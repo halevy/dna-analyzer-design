@@ -6,9 +6,9 @@
 #define DNA_DUPPARAMS_H
 
 
-#include "Iparams.h"
+#include "CreationParams.h"
 
-class DupParams : public Iparams{
+class DupParams : public CreationParams{
 public:
     bool isValid(std::vector<std::string>& params);
 };

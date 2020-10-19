@@ -6,9 +6,9 @@
 #define DNA_LOADPARAMS_H
 
 
-#include "Iparams.h"
+#include "CreationParams.h"
 
-class LoadParams : public Iparams{
+class LoadParams : public CreationParams{
 public:
     bool isValid(std::vector<std::string>& params);
 };

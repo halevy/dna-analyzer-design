@@ -9,10 +9,10 @@ void Creation::print(const DnaData &dnaData){
     if( length > 40){
 
         std::cout<<dnaData.getDna().slice(-1,32).GetData()<<"....";
-        std::cout<<dnaData.getDna().slice(length-4,length).GetData()<<std::endl;
+        std::cout<<dnaData.getDna().slice(length-4,length).GetData();
     }
     else{
-        std::cout<<dnaData.getDna()<<std::endl;
+        std::cout<<dnaData.getDna();
     }
 
 }

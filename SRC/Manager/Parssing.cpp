@@ -13,7 +13,6 @@ Parssing::Parssing(const std::string& command) {
         m_params.push_back(temp);
     }
 
-
 }
 std::vector<std::string> Parssing::getParams() {
     return m_params;

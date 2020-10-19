@@ -5,11 +5,9 @@
 #include "Dup.h"
 #include <vector>
 #include <sstream>
-#include "../Dnadata/dnasequence.h"
 
 
 void Dup::run(std::vector<std::string> params) {
-
 
     std::stringstream f(params[1]);
     size_t id;

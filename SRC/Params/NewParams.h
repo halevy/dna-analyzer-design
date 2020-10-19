@@ -5,9 +5,10 @@
 #ifndef DNA_NEWPARAMS_H
 #define DNA_NEWPARAMS_H
 
-#include "Iparams.h"
 
-class NewParams: public Iparams {
+#include "CreationParams.h"
+
+class NewParams: public CreationParams {
 public:
     bool isValid(std::vector<std::string>& params);
 };

@@ -9,27 +9,19 @@
 
 void New::run(std::vector<std::string> params) {
 
-    try{
-        if(params.size() == 3){
-
-            DnaData* dnaData = new DnaData(params[1],params[2],'0');
-            ContainerDnaData::getContainer().Insert(dnaData);
-            print(*dnaData);
-        }
-        else{
-            static size_t defaultNum = 1;
-            std::stringstream ss;
-            ss << "seq" << defaultNum ;
-            DnaData* dnaData = new DnaData(params[1],ss.str(),'0');
-            ContainerDnaData::getContainer().Insert(dnaData);
-            print(*dnaData);
-            defaultNum++;
-        }
+    if(params.size() == 3){
+        DnaData* dnaData = new DnaData(params[1],params[2],'0');
+        ContainerDnaData::getContainer().Insert(dnaData);
+        print(*dnaData);
     }
-    catch(std::invalid_argument& e)
-    {
-        return;
-
+    else{
+        static size_t defaultNum = 1;
+        std::stringstream ss;
+        ss << "seq" << defaultNum ;
+        DnaData* dnaData = new DnaData(params[1],ss.str(),'0');
+        ContainerDnaData::getContainer().Insert(dnaData);
+        print(*dnaData);
+        defaultNum++;
     }
 
 }

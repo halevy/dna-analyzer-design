@@ -42,11 +42,11 @@ DnaSequence::Nucleotide* DnaSequence::InitDna(const char* dnaSequence)
     try
     {
         if(!IsValidDna(dnaSequence))
-            throw std::invalid_argument("it is not a DNA");
+            throw std::invalid_argument(" it is not a DNA");
     }
     catch(std::invalid_argument& e)
     {
-        std::cout<<"Exception!"<<e.what()<<std::endl;
+        //std::cout<<"Exception!"<<e.what()<<std::endl;
         throw ;
     }
     char* dna = strcpy(new char[strlen(dnaSequence)+1],dnaSequence);

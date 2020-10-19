@@ -8,18 +8,9 @@
 
 bool DupParams::isValid(std::vector<std::string> &params) {
 
-    try
-    {
-        if(params.size() > 3 || params.size() == 1 || params[1][0] != '#')
-            throw std::invalid_argument("invalid argument");
-
-    }
-    catch(std::invalid_argument& e)
-    {
-        std::cout<<"Exception!"<<e.what()<<std::endl;
-        return false;
-    }
-    params[1].erase(0,1);
+    CreationParams::validSize(params.size());
+    CreationParams::isHashTag(params[1]);
+    CreationParams::validArgs(params);
 
     return true;
 }
