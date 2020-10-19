@@ -6,9 +6,9 @@
 #define DNA_LENPARAMS_H
 
 
-#include "Iparams.h"
+#include "AnalysisParams.h"
 
-class LenParams: public Iparams {
+class LenParams: public AnalysisParams {
 public:
     bool isValid(std::vector<std::string>& params);
 };

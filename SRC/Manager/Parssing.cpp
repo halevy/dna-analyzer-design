@@ -12,15 +12,6 @@ Parssing::Parssing(const std::string& command) {
     while(str >> temp){
         m_params.push_back(temp);
     }
-    try
-    {
-        if(m_params.size() < 2 )
-            throw std::invalid_argument("invalid argument");
-    }
-    catch(std::invalid_argument& e)
-    {
-        std::cout<<"Exception!"<<e.what()<<std::endl;
-    }
 
 
 }

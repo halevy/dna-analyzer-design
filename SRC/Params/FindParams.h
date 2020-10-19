@@ -6,9 +6,9 @@
 #define DNA_FINDPARAMS_H
 
 
-#include "Iparams.h"
+#include "AnalysisParams.h"
 
-class FindParams : public Iparams{
+class FindParams : public AnalysisParams{
 public:
     bool isValid(std::vector<std::string>& params);
 };

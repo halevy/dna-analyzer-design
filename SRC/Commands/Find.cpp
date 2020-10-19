@@ -6,15 +6,7 @@
 
 void Find::run(std::vector<std::string> params) {
 
-    try{
-        DnaData* dnaData = Analysis::getDnaDataByString(params[1]);
-        std::cout<< dnaData->getDna().find(params[2]) + 1 <<std::endl;
-    }
-    catch(std::invalid_argument& e)
-    {
-        return;
-
-    }
-
+    DnaData* dnaData = Analysis::getDnaDataByString(params[1]);
+    std::cout<< dnaData->getDna().find(params[2]) + 1 <<std::endl;
 
 }

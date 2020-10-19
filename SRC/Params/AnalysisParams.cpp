@@ -7,7 +7,7 @@
 bool AnalysisParams::isHashTag(const std::string &idByString) {
 
     if(idByString[0] != '#')
-        throw std::invalid_argument("Missing hashTag");
+        throw std::invalid_argument(" Missing hashTag");
 
     return true;
 }

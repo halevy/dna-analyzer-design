@@ -10,6 +10,9 @@ void ContainerDnaData::Insert(DnaData* dnaData){
 
 }
 DnaData* ContainerDnaData::FindDnaData(size_t id) {
+    if(m_idWithDnaData.find(id) == m_idWithDnaData.end()){
+        throw std::invalid_argument(" Sequence does not exist");
+    }
     return m_idWithDnaData[id];
 }
 size_t ContainerDnaData::FindId(const std::string &name) {

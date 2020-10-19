@@ -51,9 +51,7 @@ int main() {
         std::cout << *it;
     }
     std::cout << std::endl;*/
-    std::string str = "ACT";
-    DnaSequence dna2(str);
-    std::cout << dna2.find("G") << std::endl;
+
     Cmd cmd;
     cmd.start();
 
