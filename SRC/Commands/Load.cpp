@@ -5,15 +5,7 @@
 #include "../Reader/file_reader.h"
 
 void Load::run(std::vector<std::string> params) {
-    try
-    {
-        if(params.size() > 3 || (params.size() == 3 && params[2][0] != '@'))
-            throw std::invalid_argument("invalid argument");
-    }
-    catch(std::invalid_argument& e)
-    {
-        std::cout<<"Exception!"<<e.what()<<std::endl;
-    }
+
     FileReader fileReader(params[1]);
     std::string result = fileReader.read();
     if(params.size() == 3){

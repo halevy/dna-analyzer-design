@@ -7,19 +7,24 @@
 #include "Cmd.h"
 #include <iostream>
 #include "../Dnadata/ContainerDnaData.h"
-#include "../Factory/Factorial.h"
+#include "../Factory/FactoryCommands.h"
+#include "../Factory/FactoryParams.h"
 
 void Cmd::start() {
     std::string result;
     CmdReader cmdReader;
+    FactoryCommands factoryCommands;
+    FactoryParams factoryParams;
+    std::vector<std::string> params;
     int count = 3;
     while (count){
         result = cmdReader.read();
         Parssing parssing(result);
-        Factorial factorial;
-        std::vector<std::string> params = parssing.getParams();
-        factorial.getCommand(params[0])->run(params);
-        count--;
+        params = parssing.getParams();
+        if(factoryParams.getParam(params[0])->isValid(params)){
+            factoryCommands.getCommand(params[0])->run(params);
+            count--;
+        }
     }
 
 }
