@@ -1,16 +1,14 @@
-//
-// Created by a on 9/21/20.
-//
+
 
 #include "FactoryCommands.h"
-#include "../Commands/New.h"
-#include "../Commands/Load.h"
-#include "../Commands/Save.h"
-#include "../Commands/Dup.h"
-#include "../Commands/Len.h"
-#include "../Commands/Find.h"
-#include "../Commands/Count.h"
-#include "../Commands/FindAll.h"
+#include "../Commands/Creation/New.h"
+#include "../Commands/Creation/Dup.h"
+#include "../Commands/Management/Save.h"
+#include "../Commands/Creation/Load.h"
+#include "../Commands/Analysis/Len.h"
+#include "../Commands/Analysis/Find.h"
+#include "../Commands/Analysis/Count.h"
+#include "../Commands/Analysis/FindAll.h"
 
 std::map<const std::string,Icommand*> FactoryCommands::m_commands = initCommands();
 

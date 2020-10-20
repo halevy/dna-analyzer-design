@@ -3,13 +3,13 @@
 //
 
 #include "FactoryParams.h"
-#include "../Params/NewParams.h"
-#include "../Params/DupParams.h"
-#include "../Params/LoadParams.h"
-#include "../Params/LenParams.h"
-#include "../Params/FindParams.h"
-#include "../Params/CountParams.h"
-#include "../Params/FindAllParams.h"
+#include "../Params/CreationParams/NewParams.h"
+#include "../Params/CreationParams/DupParams.h"
+#include "../Params/CreationParams/LoadParams.h"
+#include "../Params/AnalysisParams/CountParams.h"
+#include "../Params/AnalysisParams/FindParams.h"
+#include "../Params/AnalysisParams/LenParams.h"
+#include "../Params/AnalysisParams/FindAllParams.h"
 
 std::map<const std::string,Iparams*> FactoryParams::m_params = initParams();
 

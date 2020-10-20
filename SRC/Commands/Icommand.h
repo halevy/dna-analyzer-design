@@ -1,6 +1,4 @@
-//
-// Created by a on 7/6/20.
-//
+
 
 #ifndef SRC_ICOMMAND_H
 #define SRC_ICOMMAND_H
