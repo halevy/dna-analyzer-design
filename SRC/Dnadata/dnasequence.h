@@ -20,11 +20,13 @@ private:
         char m_c;
     public:
         Nucleotide(const char c):m_c(c){}
+        Nucleotide():m_c(){}
         Nucleotide& operator=(const char c);
         char GetC()const{return m_c;}
-        bool IsValidChar(const char c);
+        static bool IsValidChar(const char c);
         Nucleotide& operator=(const Nucleotide& nucleotide);
         char PiarOfNucleotide();
+        operator char(){return m_c;}
 
         friend std::ostream& operator<<(std::ostream& os, const Nucleotide& nucleotide){return os<<nucleotide.m_c<<std::endl;}
     };
@@ -39,7 +41,6 @@ public:
     DnaSequence(const char* dnaSequence);
     DnaSequence(const std::string& dnaSequence);
     DnaSequence(const size_t size);
-    DnaSequence(std::fstream my_file);
     DnaSequence& operator = (const DnaSequence& dnaSequence);
     Nucleotide& operator[](size_t index)const;
     DnaSequence(const DnaSequence& dnaSequence);
@@ -47,11 +48,12 @@ public:
     friend std::ostream& operator<<(std::ostream& os, const DnaSequence& dnaSequence);
     ~DnaSequence();
     const char* GetData()const;
+    const std::string getDnaAsString()const{ return GetData();}
     DnaSequence slice(size_t start,size_t end)const;
     DnaSequence Pairing();
-    long find(const DnaSequence& subDnaSequence,long Index = 0)const;
-    long Count(const DnaSequence& subDnaSequence)const;
-    std::list<long> FindAll(const DnaSequence& subDnaSequence)const ;
+    size_t find(const DnaSequence& subDnaSequence,size_t Index = 0)const;
+    size_t Count(const DnaSequence& subDnaSequence)const;
+    std::list<size_t> FindAll(const DnaSequence& subDnaSequence)const ;
     std::list<DnaSequence> FindConsensus();
 };
 

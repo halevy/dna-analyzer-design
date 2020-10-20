@@ -51,7 +51,17 @@ int main() {
         std::cout << *it;
     }
     std::cout << std::endl;*/
-
+//    DnaSequence dna1("ATCAAG");
+//    DnaSequence dna2("TTTT");
+//    dna2 = dna1;
+//    try{
+//        std::cout <<dna2[10] << std::endl;
+//    }
+//    catch(std::out_of_range& e)
+//    {
+//        std::cout<<"Exception!"<<e.what()<<std::endl;
+//    }
+//    std::cout << dna2.getDnaAsString() <<std::endl;
     Cmd cmd;
     cmd.start();
 

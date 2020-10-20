@@ -8,12 +8,13 @@
 bool DnaSequence::IsValidDna(const char* dnaSequence)
 {
     for (int i = 0; i < strlen(dnaSequence); ++i) {
-        if(dnaSequence[i] != 'A'&&dnaSequence[i] != 'C'&&dnaSequence[i] != 'T'&&dnaSequence[i] != 'G')
+
+        if(!Nucleotide::IsValidChar(dnaSequence[i]))
             return false;
     }
     return true;
 }
-bool DnaSequence::Nucleotide::IsValidChar(const char c)
+bool DnaSequence::Nucleotide::IsValidChar(char c)
 {
     return !(c != 'A'&& c != 'C'&& c != 'T'&& c != 'G');
 }
@@ -26,8 +27,8 @@ DnaSequence::Nucleotide& DnaSequence::Nucleotide::operator=(const char c)
 {
     try
     {
-        if(!IsValidChar(c))
-            throw std::invalid_argument("invalid argument");
+        if(!IsValidChar(c) && c != '\0')
+            throw std::invalid_argument("invalid letter");
     }
     catch(std::invalid_argument& e)
     {
@@ -39,19 +40,19 @@ DnaSequence::Nucleotide& DnaSequence::Nucleotide::operator=(const char c)
 
 DnaSequence::Nucleotide* DnaSequence::InitDna(const char* dnaSequence)
 {
-    try
-    {
-        if(!IsValidDna(dnaSequence))
-            throw std::invalid_argument(" it is not a DNA");
-    }
-    catch(std::invalid_argument& e)
-    {
-        //std::cout<<"Exception!"<<e.what()<<std::endl;
-        throw ;
-    }
-    char* dna = strcpy(new char[strlen(dnaSequence)+1],dnaSequence);
-    return (Nucleotide*)dna;
+    if(!IsValidDna(dnaSequence))
+        throw std::invalid_argument(" it is not a DNA");
 
+    Nucleotide* dnaSequence_ = new Nucleotide[strlen(dnaSequence)+1];
+    size_t i;
+
+    for(i = 0;i < strlen(dnaSequence); ++i){
+        dnaSequence_[i] = dnaSequence[i];
+    }
+
+    dnaSequence_[i] = '\0';
+
+    return dnaSequence_;
 
 }
 
@@ -62,44 +63,24 @@ DnaSequence::DnaSequence(const std::string& dnaSequence):m_data(InitDna(dnaSeque
                                                          m_length(dnaSequence.length()){}
 
 DnaSequence::DnaSequence(const size_t size){
-    char* temp = new char[size];
-    m_data = (Nucleotide*)temp;
+
+    m_data = new Nucleotide[size + 1];
     m_length = size;
 }
-DnaSequence::DnaSequence(std::fstream my_file)
-{
-    std::string TempDna;
-    my_file.exceptions ( std::fstream::failbit | std::fstream::badbit );
-    try
-    {
-        my_file.open ("my_DNA.txt");
-        while (!my_file.eof())
-        {
-            getline(my_file, TempDna);
-            DnaSequence dnaSequence(TempDna.c_str());
-            my_file<<"Data: "<<dnaSequence.GetData();
-            my_file<<"Length: "<<dnaSequence.length();
-        }
-        my_file.close();
-    }
-    catch (std::fstream::failure& e)
-    {
-        std::cerr << "Exception opening/reading/closing file\n";
-    }
 
-
-}
 DnaSequence& DnaSequence::operator=(const DnaSequence& dnaSequence) {
+
     if (this == &dnaSequence)
         return *this;
+
     delete[] m_data;
-    m_data = InitDna((char*)(dnaSequence.m_data));
+    m_data = InitDna(dnaSequence.GetData());
     m_length = dnaSequence.m_length;
     return *this;
 }
 
 DnaSequence::DnaSequence(const DnaSequence& dnaSequence):
-        m_data(InitDna((char*)(dnaSequence.m_data))),m_length(dnaSequence.m_length){}
+        m_data(InitDna(dnaSequence.GetData())),m_length(dnaSequence.m_length){}
 
 
 size_t DnaSequence::length()const
@@ -108,9 +89,9 @@ size_t DnaSequence::length()const
 }
 DnaSequence DnaSequence::slice(size_t start, size_t end)const
 {
-    DnaSequence dnaSequence(end-start-1);
+    DnaSequence dnaSequence(end-start);
     for(size_t i = 0; i < dnaSequence.length() ; i++){
-        (dnaSequence.m_data)[i] = m_data[start+i+1];
+        (dnaSequence.m_data)[i] = m_data[start+i];
     }
     return dnaSequence;
 
@@ -137,32 +118,28 @@ DnaSequence DnaSequence::Pairing()
     }
     return NewDnaSequence;
 }
-long DnaSequence::find(const DnaSequence& subDnaSequence,long Index)const
+size_t DnaSequence::find(const DnaSequence& subDnaSequence,size_t Index)const
 {
-
-    const char* result = strstr(GetData()+Index,subDnaSequence.GetData());
-    if(!result)
-        return -1;
-    return (result-GetData());
+    return getDnaAsString().find(subDnaSequence.getDnaAsString(),Index);
 
 }
-long DnaSequence::Count(const DnaSequence& subDnaSequence)const
+size_t DnaSequence::Count(const DnaSequence& subDnaSequence)const
 {
 
-    long counter = 0;
-    for (long Index = find(subDnaSequence); Index != -1 && Index + subDnaSequence.length() <= length();
-         Index = find(subDnaSequence, Index + subDnaSequence.length()))
+    size_t counter = 0;
+    for (size_t Index = find(subDnaSequence); Index != -1 && Index + subDnaSequence.length() <= length();
+         Index = find(subDnaSequence, Index + 1))
     {
         ++counter;
     }
     return counter;
 
 }
-std::list<long> DnaSequence::FindAll(const DnaSequence& subDnaSequence)const
+std::list<size_t> DnaSequence::FindAll(const DnaSequence& subDnaSequence)const
 {
-    std::list<long> indexes;
-    for (long Index = find(subDnaSequence); Index != -1 && Index + subDnaSequence.length() <= length();
-         Index = find(subDnaSequence, Index + subDnaSequence.length()))
+    std::list<size_t> indexes;
+    for (size_t Index = find(subDnaSequence); Index != -1 && Index + subDnaSequence.length() <= length();
+         Index = find(subDnaSequence, Index + 1))
     {
         indexes.push_back(Index);
     }
@@ -171,10 +148,10 @@ std::list<long> DnaSequence::FindAll(const DnaSequence& subDnaSequence)const
 std::list<DnaSequence> DnaSequence::FindConsensus()
 {
 
-    long indexTAG,indexTAA,indexTGA;
-    std::list<long > indexes = FindAll("ATG");
+    size_t indexTAG,indexTAA,indexTGA;
+    std::list<size_t > indexes = FindAll("ATG");
     std::list<DnaSequence> Consensus;
-    for (std::list<long>::iterator it = indexes.begin(); it != indexes.end(); ++it) {
+    for (std::list<size_t>::iterator it = indexes.begin(); it != indexes.end(); ++it) {
         indexTAG = find("TAG", *it);
         indexTAA = find("TAA", *it);
         indexTGA = find("TGA", *it);
@@ -201,21 +178,16 @@ const char* DnaSequence::GetData()const
 
 DnaSequence::Nucleotide& DnaSequence::operator[](size_t index) const
 {
-    try
-    {
-        if (index >= m_length || index < 0)
-            throw std::invalid_argument("not valid index");
-    }
-    catch(std::invalid_argument& e)
-    {
-        std::cout<<"Exception!"<<e.what()<<std::endl;
-    }
+    if (index >= m_length || index < 0)
+        throw std::out_of_range("not valid index");
+
     return m_data[index];
 
 }
 DnaSequence::~DnaSequence()
 {
     delete[] m_data;
+    m_data = NULL;
 }
 bool operator==(const DnaSequence& dnaSequence1, const DnaSequence& dnaSequence2)
 {
