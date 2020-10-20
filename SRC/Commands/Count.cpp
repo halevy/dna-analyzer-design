@@ -6,6 +6,6 @@
 
 void Count::run(std::vector<std::string> params) {
 
-    DnaData* dnaData = Analysis::getDnaDataByString(params[1]);
-    std::cout<< dnaData->getDna().Count(Analysis::getDnaSequence(params[2])) <<std::endl;
+    DnaData* dnaData = getDnaDataByString(params[1]);
+    std::cout<< dnaData->getDna().Count(getDnaSequence(params[2])) <<std::endl;
 }

@@ -6,8 +6,8 @@
 
 bool LenParams::isValid(std::vector<std::string> &params) {
 
-    AnalysisParams::validSize(params.size(),2);
-    AnalysisParams::isHashTag(params[1]);
+    validSize(params.size(),2);
+    isHashTag(params[1]);
 
     return true;
 

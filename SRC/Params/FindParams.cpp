@@ -6,8 +6,8 @@
 
 bool FindParams::isValid(std::vector<std::string> &params) {
 
-    AnalysisParams::validSize(params.size(),3);
-    AnalysisParams::isHashTag(params[1]);
+    validSize(params.size(),3);
+    isHashTag(params[1]);
 
     return true;
 }

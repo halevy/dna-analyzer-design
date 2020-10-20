@@ -7,8 +7,8 @@
 
 bool NewParams::isValid(std::vector <std::string> &params) {
 
-    CreationParams::validSize(params.size());
-    CreationParams::validArgs(params);
+    validSize(params.size());
+    validArgs(params);
 
     return true;
 }

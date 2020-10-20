@@ -8,9 +8,9 @@
 
 bool DupParams::isValid(std::vector<std::string> &params) {
 
-    CreationParams::validSize(params.size());
-    CreationParams::isHashTag(params[1]);
-    CreationParams::validArgs(params);
+    validSize(params.size());
+    isHashTag(params[1]);
+    validArgs(params);
 
     return true;
 }

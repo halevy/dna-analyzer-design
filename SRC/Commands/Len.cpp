@@ -7,6 +7,6 @@
 
 void Len::run(std::vector<std::string> params) {
 
-    DnaData* dnaData = Analysis::getDnaDataByString(params[1]);
+    DnaData* dnaData = getDnaDataByString(params[1]);
     std::cout<< dnaData->getDna().length() <<std::endl;
 }
