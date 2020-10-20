@@ -22,10 +22,6 @@ void Dup::run(std::vector<std::string> params) {
         name = ss.str();
         defaultNum++;
     }
-    DnaData* newDnaData = new DnaData(dnaData->getDna().GetData(),name,'0');
-    ContainerDnaData::getContainer().Insert(newDnaData);
-    print(*newDnaData);
-
-
+    createNewDna(dnaData->getDna().GetData(),name,'0');
 
 }

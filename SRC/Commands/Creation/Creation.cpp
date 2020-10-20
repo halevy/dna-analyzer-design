@@ -6,11 +6,18 @@ void Creation::print(const DnaData &dnaData){
     size_t length = dnaData.getDna().length();
     if( length > 40){
 
-        std::cout<<dnaData.getDna().slice(-1,32).GetData()<<"....";
-        std::cout<<dnaData.getDna().slice(length-4,length).GetData();
+        std::cout<<dnaData.getDna().slice(0,32).GetData()<<"....";
+        std::cout<<dnaData.getDna().slice(length-3,length).GetData()<<std::endl;
     }
     else{
         std::cout<<dnaData.getDna();
     }
 
+}
+
+void Creation::createNewDna(const std::string &dna, const std::string &name, char status) {
+
+    DnaData* dnaData = new DnaData(dna,name,status);
+    ContainerDnaData::getContainer().Insert(dnaData);
+    print(*dnaData);
 }

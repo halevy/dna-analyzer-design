@@ -4,24 +4,22 @@
 #include "New.h"
 #include <vector>
 #include <sstream>
-//#include "../../Dnadata/dnasequence.h"
+
 
 
 void New::run(std::vector<std::string> params) {
 
+    std::string name;
+
     if(params.size() == 3){
-        DnaData* dnaData = new DnaData(params[1],params[2],'0');
-        ContainerDnaData::getContainer().Insert(dnaData);
-        print(*dnaData);
+        name = params[2];
     }
     else{
         static size_t defaultNum = 1;
         std::stringstream ss;
         ss << "seq" << defaultNum ;
-        DnaData* dnaData = new DnaData(params[1],ss.str(),'0');
-        ContainerDnaData::getContainer().Insert(dnaData);
-        print(*dnaData);
+        name = ss.str();
         defaultNum++;
     }
-
+    createNewDna(params[1],name,'0');
 }

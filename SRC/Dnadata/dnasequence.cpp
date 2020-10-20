@@ -128,7 +128,7 @@ size_t DnaSequence::Count(const DnaSequence& subDnaSequence)const
 
     size_t counter = 0;
     for (size_t Index = find(subDnaSequence); Index != -1 && Index + subDnaSequence.length() <= length();
-         Index = find(subDnaSequence, Index + 1))
+         Index = find(subDnaSequence, Index + subDnaSequence.length()))
     {
         ++counter;
     }
@@ -139,7 +139,7 @@ std::list<size_t> DnaSequence::FindAll(const DnaSequence& subDnaSequence)const
 {
     std::list<size_t> indexes;
     for (size_t Index = find(subDnaSequence); Index != -1 && Index + subDnaSequence.length() <= length();
-         Index = find(subDnaSequence, Index + 1))
+         Index = find(subDnaSequence, Index + subDnaSequence.length()))
     {
         indexes.push_back(Index);
     }
