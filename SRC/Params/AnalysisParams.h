@@ -13,6 +13,7 @@ public:
     bool isValid(std::vector<std::string>& params) = 0;
     bool isHashTag(std::string& idByString);
     bool validSize(size_t size,unsigned int desirableSize);
+
 };
 
 

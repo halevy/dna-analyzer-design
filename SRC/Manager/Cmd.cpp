@@ -16,7 +16,7 @@ void Cmd::start() {
     FactoryCommands factoryCommands;
     FactoryParams factoryParams;
     std::vector<std::string> params;
-    int count = 3;
+    int count = 6;
     while (count){
         result = cmdReader.read();
         Parssing parssing(result);

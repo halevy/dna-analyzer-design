@@ -7,6 +7,7 @@
 void Find::run(std::vector<std::string> params) {
 
     DnaData* dnaData = Analysis::getDnaDataByString(params[1]);
-    std::cout<< dnaData->getDna().find(params[2]) + 1 <<std::endl;
+    //std::cout<< dnaData->getDna().find(params[2]) + 1 <<std::endl;
+    std::cout<< dnaData->getDna().find(Analysis::getDnaSequence(params[2])) + 1 <<std::endl;
 
 }

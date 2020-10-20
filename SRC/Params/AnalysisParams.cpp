@@ -24,3 +24,4 @@ bool AnalysisParams::validSize(size_t size, unsigned int desirableSize) {
 
     return true;
 }
+
