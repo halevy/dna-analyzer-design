@@ -10,7 +10,7 @@ size_t DnaData::m_initializing_id = 0;
 
 
 DnaData::DnaData(const std::string& dna, const std::string& name,char status):m_dna(dna),m_status(status),
-m_id(++m_initializing_id),m_name(name) {
+m_id(++m_initializing_id),m_name(name),m_counter(0) {
 
 }
 const DnaSequence& DnaData::getDna() const{
@@ -18,6 +18,9 @@ const DnaSequence& DnaData::getDna() const{
 }
 const std::string&  DnaData::getName()const {
     return m_name;
+}
+size_t DnaData::getCounter() {
+    return ++m_counter;
 }
 void DnaData::setName(const std::string &name) {
     m_name = name;

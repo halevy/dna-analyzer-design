@@ -16,6 +16,7 @@ private:
     static std::map<const std::string,Icommand*> initCommands();
 public:
     Icommand* getCommand(const std::string& command);
+    ~FactoryCommands();
 };
 
 

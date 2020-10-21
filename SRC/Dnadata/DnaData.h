@@ -13,12 +13,14 @@ private:
     std::string m_name;
     char m_status;
     size_t m_id;
+    size_t m_counter;
     static size_t m_initializing_id;
 
 public:
     DnaData(const std::string& dna,const std::string& name,char status);
     const DnaSequence& getDna()const;
     const std::string& getName()const;
+    size_t getCounter();
     void setName(const std::string& name);
     char getStatus();
     void setStatus(char status);

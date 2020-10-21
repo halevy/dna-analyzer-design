@@ -32,5 +32,14 @@ std::map<const std::string,Icommand*> FactoryCommands::initCommands() {
 }
 
 Icommand* FactoryCommands::getCommand(const std::string &command) {
+
     return m_commands[command];
+}
+
+FactoryCommands::~FactoryCommands() {
+
+    std::map<const std::string,Icommand*>::iterator it;
+
+    for (it = m_commands.begin(); it != m_commands.end(); ++it)
+        delete it->second;
 }

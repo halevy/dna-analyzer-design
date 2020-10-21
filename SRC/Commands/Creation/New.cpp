@@ -12,14 +12,16 @@ void New::run(std::vector<std::string> params) {
     std::string name;
 
     if(params.size() == 3){
-        name = params[2];
+        //name = params[2];
+        name = getNameOfDna(params[2]);
     }
     else{
         static size_t defaultNum = 1;
         std::stringstream ss;
-        ss << "seq" << defaultNum ;//TODO
+        ss << "seq" << defaultNum ;
         name = ss.str();
         defaultNum++;
     }
+
     createNewDna(params[1],name,'0');
 }

@@ -10,10 +10,13 @@ void Load::run(std::vector<std::string> params) {
 
     if(params.size() == 3){
         name = params[2];
+
     }
     else{
         size_t index = params[1].find('.');
         name = params[1].erase(index,params[1].length()-index);
     }
+
+    name = getNameOfDna(name);
     createNewDna(result,name,'-');
 }

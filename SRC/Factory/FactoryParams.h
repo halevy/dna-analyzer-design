@@ -15,6 +15,7 @@ private:
     static std::map<const std::string,Iparams*> initParams();
 public:
     Iparams* getParam(const std::string& command);
+    ~FactoryParams();
 };
 
 
