@@ -9,7 +9,7 @@
 
 class ContainerDnaData{
 private:
-    std::map<std::string,size_t > m_nameWithId;
+    std::map<std::string,size_t > m_nameWithId;//TODO
     std::map<size_t ,DnaData* > m_idWithDnaData;
 
 

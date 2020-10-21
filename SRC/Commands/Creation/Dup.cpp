@@ -16,11 +16,12 @@ void Dup::run(std::vector<std::string> params) {
         name = params[2];
     }
     else{
-        static size_t defaultNum = 1;
-        std::stringstream ss;
-        ss << dnaData->getName() <<'_' << defaultNum ;
-        name = ss.str();
-        defaultNum++;
+        name = dnaData->getName();
+//        static size_t defaultNum = 1;
+//        std::stringstream ss;
+//        ss << dnaData->getName() <<'_' << defaultNum ;
+//        name = ss.str();
+//        defaultNum++;
     }
     createNewDna(dnaData->getDna().GetData(),name,'0');
 

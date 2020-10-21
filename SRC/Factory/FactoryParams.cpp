@@ -12,6 +12,7 @@
 #include "../Params/AnalysisParams/FindAllParams.h"
 #include "../Params/ManagementParams/SaveParams.h"
 #include "../Params/ManagementParams/DelParams.h"
+#include "../Params/ControlParams/QuitParams.h"
 
 std::map<const std::string,Iparams*> FactoryParams::m_params = initParams();
 
@@ -27,6 +28,7 @@ std::map<const std::string,Iparams*> FactoryParams::initParams() {
     temp.insert(std::pair<const std::string,Iparams*>("findall",new FindAllParams));
     temp.insert(std::pair<const std::string,Iparams*>("save",new SaveParams));
     temp.insert(std::pair<const std::string,Iparams*>("del",new DelParams));
+    temp.insert(std::pair<const std::string,Iparams*>("quit",new QuitParams));
 
     return temp;
 }
