@@ -16,7 +16,6 @@ void Cmd::start() {
     FactoryCommands factoryCommands;
     FactoryParams factoryParams;
     std::vector<std::string> params;
-    //int count = 10;
     while (true){
         result = cmdReader.read();
         Parssing parssing(result);
@@ -24,7 +23,6 @@ void Cmd::start() {
         try{
             factoryParams.getParam(params[0])->isValid(params);
             factoryCommands.getCommand(params[0])->run(params);
-            //count--;
         }
         catch(std::invalid_argument& e)
         {

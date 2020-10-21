@@ -12,7 +12,6 @@ void New::run(std::vector<std::string> params) {
     std::string name;
 
     if(params.size() == 3){
-        //name = params[2];
         name = getNameOfDna(params[2]);
     }
     else{

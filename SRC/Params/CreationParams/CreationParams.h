@@ -6,12 +6,11 @@
 #define DNA_CREATIONPARAMS_H
 
 #include "../Iparams.h"
+#include "../../Utils/AuxiliaryFunctionsParams.h"
 
 class CreationParams: public Iparams {
 public:
     bool isValid(std::vector<std::string>& params) = 0;
-    bool isHashTag(std::string& idByString);
-    bool validSize(size_t size);
     void validArgs(std::vector<std::string>& params);
 };
 
