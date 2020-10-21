@@ -8,7 +8,7 @@
 
 class Management:public Icommand{
 public:
-    void run(std::vector<std::string> params) = 0;
+    void run(std::vector<std::string>& params) = 0;
     const char* getDnaSequence(DnaData* dnaData);
 };
 #endif //SRC_MANAGEMENT_H

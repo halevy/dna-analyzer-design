@@ -7,7 +7,7 @@
 
 class Dup:public Creation{
 public:
-    void run(std::vector<std::string> params);
+    void run(std::vector<std::string>& params);
 
 };
 #endif //SRC_DUP_H

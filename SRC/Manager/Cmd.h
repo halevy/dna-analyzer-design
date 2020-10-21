@@ -9,4 +9,5 @@ class Cmd{
 public:
     static void start();
 };
+
 #endif //SRC_CMD_H

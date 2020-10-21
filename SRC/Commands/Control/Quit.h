@@ -10,7 +10,7 @@
 
 class Quit : public Control{
 public:
-    void run(std::vector<std::string> params);
+    void run(std::vector<std::string>& params);
 };
 
 

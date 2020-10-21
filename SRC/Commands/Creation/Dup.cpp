@@ -5,7 +5,7 @@
 #include <sstream>
 
 
-void Dup::run(std::vector<std::string> params) {
+void Dup::run(std::vector<std::string>& params) {
 
     std::stringstream f(params[1]);
     size_t id;

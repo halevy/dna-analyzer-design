@@ -10,7 +10,7 @@
 class Icommand{
 
 public:
-    virtual void run(std::vector<std::string> params) = 0;
+    virtual void run(std::vector<std::string>& params) = 0;
     virtual ~Icommand(){}
 };
 #endif //SRC_ICOMMAND_H

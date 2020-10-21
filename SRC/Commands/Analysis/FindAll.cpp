@@ -2,7 +2,7 @@
 
 #include "FindAll.h"
 
-void FindAll::run(std::vector<std::string> params) {
+void FindAll::run(std::vector<std::string>& params) {
 
     DnaData* dnaData = getDnaDataByString(params[1]);
     std::list<size_t > indexes = dnaData->getDna().FindAll(getDnaSequence(params[2]));

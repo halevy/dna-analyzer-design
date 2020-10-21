@@ -5,7 +5,7 @@
 #include "Quit.h"
 #include "../../Utils/AuxiliaryFunctionsCommands.h"
 
-void Quit::run(std::vector<std::string> params) {
+void Quit::run(std::vector<std::string>& params) {
 
     std::string answer;
 

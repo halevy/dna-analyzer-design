@@ -5,7 +5,7 @@
 #include "Del.h"
 #include "../../Utils/AuxiliaryFunctionsCommands.h"
 
-void Del::run(std::vector<std::string> params) {
+void Del::run(std::vector<std::string>& params) {
 
     std::string answer;
     DnaData* dnaData = getDnaDataByString(params[1]);

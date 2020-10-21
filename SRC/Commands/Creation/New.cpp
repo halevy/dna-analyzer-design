@@ -7,7 +7,7 @@
 
 
 
-void New::run(std::vector<std::string> params) {
+void New::run(std::vector<std::string>& params) {
 
     std::string name;
 

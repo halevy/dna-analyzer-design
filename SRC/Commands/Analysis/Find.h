@@ -7,7 +7,7 @@
 
 class Find : public Analysis{
 public:
-    void run(std::vector<std::string> params);
+    void run(std::vector<std::string>& params);
 };
 
 

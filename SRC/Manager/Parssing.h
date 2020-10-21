@@ -17,4 +17,5 @@ public:
     std::vector<std::string> getParams();
 
 };
+
 #endif //SRC_PARSSING_H
