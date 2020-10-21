@@ -5,6 +5,7 @@
 #include "AuxiliaryFunctionsCommands.h"
 #include "../Dnadata/ContainerDnaData.h"
 #include <sstream>
+#include <iostream>
 
 DnaData* getDnaDataByString(const std::string &idByString) {
 
@@ -27,4 +28,22 @@ void print(const DnaData &dnaData){
         std::cout<<dnaData.getDna();
     }
 
+}
+
+std::string invalidResponse(){
+
+    std::string secondAnswer;
+    std::cout<<"You have typed an invalid response. Please either confirm by 'y'/'Y',"
+    <<"\nor cancel by 'n'/'N'.\n>confirm>>>";
+    getline(std::cin,secondAnswer);
+
+    return secondAnswer;
+}
+
+std::string confirm(){
+
+    std::string answer_;
+    std::cout<< " Please confirm by 'y' or 'Y', or cancel by 'n' or 'N'.\n>confirm>>>";
+    getline(std::cin,answer_);
+    return answer_;
 }

@@ -9,6 +9,7 @@
 
 DnaData* getDnaDataByString(const std::string& idByString);
 void print(const DnaData& dnaData);
-
+std::string invalidResponse();
+std::string confirm();
 
 #endif //DNA_AUXILIARYFUNCTIONS_H
