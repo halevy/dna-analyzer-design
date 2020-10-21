@@ -9,6 +9,7 @@
 #include "../Commands/Analysis/Find.h"
 #include "../Commands/Analysis/Count.h"
 #include "../Commands/Analysis/FindAll.h"
+#include "../Commands/Management/Del.h"
 
 std::map<const std::string,Icommand*> FactoryCommands::m_commands = initCommands();
 
@@ -23,6 +24,7 @@ std::map<const std::string,Icommand*> FactoryCommands::initCommands() {
     temp.insert(std::pair<const std::string,Icommand*>("find",new Find));
     temp.insert(std::pair<const std::string,Icommand*>("count",new Count));
     temp.insert(std::pair<const std::string,Icommand*>("findall",new FindAll));
+    temp.insert(std::pair<const std::string,Icommand*>("del",new Del));
 
     return temp;
 }

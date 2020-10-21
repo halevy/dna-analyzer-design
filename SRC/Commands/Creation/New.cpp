@@ -17,7 +17,7 @@ void New::run(std::vector<std::string> params) {
     else{
         static size_t defaultNum = 1;
         std::stringstream ss;
-        ss << "seq" << defaultNum ;
+        ss << "seq" << defaultNum ;//TODO
         name = ss.str();
         defaultNum++;
     }

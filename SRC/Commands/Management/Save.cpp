@@ -21,7 +21,7 @@ void Save::run(std::vector<std::string> params) {
     else{
         fileName = params[2];
     }
-    
+
     FileWriter fileWriter(fileName);
     fileWriter.write(dna);
 

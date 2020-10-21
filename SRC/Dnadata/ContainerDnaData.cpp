@@ -9,6 +9,10 @@ void ContainerDnaData::Insert(DnaData* dnaData){
     m_idWithDnaData[dnaData->getId()] = dnaData;
 
 }
+void ContainerDnaData::Erase(DnaData *dnaData) {
+    m_nameWithId.erase(dnaData->getName());
+    m_idWithDnaData.erase(dnaData->getId());
+}
 DnaData* ContainerDnaData::FindDnaData(size_t id) {
     if(m_idWithDnaData.find(id) == m_idWithDnaData.end()){
         throw std::invalid_argument(" Sequence does not exist");

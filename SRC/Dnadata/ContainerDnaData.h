@@ -15,6 +15,7 @@ private:
 
 public:
     void Insert(DnaData* dnaData);
+    void Erase(DnaData* dnaData);
     DnaData* FindDnaData (size_t id);
     size_t FindId(const std::string& name);
     size_t getSize();
