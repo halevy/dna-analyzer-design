@@ -13,7 +13,7 @@ private:
     std::string m_fileName;
 public:
     FileWriter(const std::string& fileName);
-    void write(const std::string& dnaSequence);
+    void write(const char* dnaSequence);
 };
 
 #endif //SRC_FILE_WRITER_H

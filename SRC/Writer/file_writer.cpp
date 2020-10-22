@@ -7,7 +7,7 @@
 
 FileWriter::FileWriter(const std::string& fileName):m_fileName(fileName){}
 
-void FileWriter::write(const std::string& dnaSequence){
+void FileWriter::write(const char* dnaSequence){
     try{
         std::ofstream myfile;
         myfile.open (m_fileName.c_str());

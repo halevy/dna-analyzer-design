@@ -22,7 +22,7 @@ void Save::run(std::vector<std::string>& params) {
     }
 
     FileWriter fileWriter(fileName);
-    fileWriter.write(dna);
+    fileWriter.write(dna.c_str());
 
 }
 

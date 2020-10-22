@@ -9,7 +9,7 @@
 
 class Iwriter{
 public:
-    virtual void write(const std::string& dnaSequence) = 0;
+    virtual void write(const char* dnaSequence) = 0;
     virtual ~Iwriter(){}
 };
 #endif //SRC_IWRITER_H
