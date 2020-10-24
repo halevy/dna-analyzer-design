@@ -36,7 +36,7 @@ std::map<const std::string,Iparams*> FactoryParams::initParams() {
 Iparams* FactoryParams::getParam(const std::string &command) {
 
     if(m_params.find(command) == m_params.end()){
-        throw std::invalid_argument(" Command not found");
+        throw std::invalid_argument("Command not found");
     }
     return m_params[command];
 }

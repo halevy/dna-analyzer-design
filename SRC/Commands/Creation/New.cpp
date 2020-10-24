@@ -7,7 +7,7 @@
 
 
 
-void New::run(std::vector<std::string>& params) {
+void New::run(std::vector<std::string>& params,Ireader* reader,Iwriter* writer) {
 
     std::string name;
 
@@ -22,5 +22,5 @@ void New::run(std::vector<std::string>& params) {
         defaultNum++;
     }
 
-    createNewDna(params[1],name,'0');
+    createNewDna(params[1],name,'0',writer);
 }

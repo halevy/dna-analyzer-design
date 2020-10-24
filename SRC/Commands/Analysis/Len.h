@@ -7,7 +7,7 @@
 
 class Len : public Analysis{
 public:
-    void run(std::vector<std::string>& params);
+    void run(std::vector<std::string>& params,Ireader* reader,Iwriter* writer);
 };
 
 

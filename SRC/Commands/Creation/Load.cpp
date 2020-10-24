@@ -2,7 +2,7 @@
 #include "Load.h"
 #include "../../Reader/file_reader.h"
 
-void Load::run(std::vector<std::string>& params) {
+void Load::run(std::vector<std::string>& params,Ireader* reader,Iwriter* writer) {
 
     FileReader fileReader(params[1]);
     std::string result = fileReader.read();
@@ -18,5 +18,5 @@ void Load::run(std::vector<std::string>& params) {
     }
 
     name = getNameOfDna(name);
-    createNewDna(result,name,'-');
+    createNewDna(result,name,'-',writer);
 }

@@ -10,7 +10,7 @@
 
 class Del : public Management{
 public:
-    void run(std::vector<std::string>& params);
+    void run(std::vector<std::string>& params,Ireader* reader,Iwriter* writer);
 };
 
 

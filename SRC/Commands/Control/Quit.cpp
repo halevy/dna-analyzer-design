@@ -5,19 +5,20 @@
 #include "Quit.h"
 #include "../../Utils/AuxiliaryFunctionsCommands.h"
 
-void Quit::run(std::vector<std::string>& params) {
+void Quit::run(std::vector<std::string>& params,Ireader* reader,Iwriter* writer) {
 
     std::string answer;
 
-    std::cout<< "Are you sure you want to quit? ";
-    answer = confirm();
+    writer->write("Are you sure you want to quit? ");
+    answer = confirm(reader,writer);
 
     if(answer != "n" && answer != "N"){
         if(answer != "y" && answer != "Y"){
-            answer = invalidResponse();
+            answer = invalidResponse(reader,writer);
         }
         if(answer == "y" || answer == "Y"){
-            std::cout<<"Thank you for using Dnalanyzer.\nGoodbye!\n";
+
+            writer->write("Thank you for using Dnalanyzer.\nGoodbye!\n");
             throw std::bad_exception();
         }
     }

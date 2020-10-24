@@ -6,6 +6,7 @@
 #define SRC_IREADER_H
 
 #include <string>
+
 class Ireader{
 public:
     virtual std::string read() = 0;

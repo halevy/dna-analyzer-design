@@ -5,7 +5,7 @@
 #include <sstream>
 
 
-void Dup::run(std::vector<std::string>& params) {
+void Dup::run(std::vector<std::string>& params,Ireader* reader,Iwriter* writer) {
 
     std::stringstream f(params[1]);
     size_t id;
@@ -20,6 +20,6 @@ void Dup::run(std::vector<std::string>& params) {
         name = dnaData->getName();
     }
     name = getNameOfDna(name);
-    createNewDna(dnaData->getDna().GetData(),name,'0');
+    createNewDna(dnaData->getDna().GetData(),name,'0',writer);
 
 }

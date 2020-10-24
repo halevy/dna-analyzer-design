@@ -2,11 +2,11 @@
 #include "Creation.h"
 
 
-void Creation::createNewDna(const std::string &dna, const std::string &name, char status) {
+void Creation::createNewDna(const std::string &dna, const std::string &name, char status,Iwriter* writer) {
 
     DnaData* dnaData = new DnaData(dna,name,status);
     ContainerDnaData::getContainer().Insert(dnaData);
-    print(*dnaData);
+    print(*dnaData,writer);
 }
 
 const std::string& Creation::getNameOfDna(std::string &name) {

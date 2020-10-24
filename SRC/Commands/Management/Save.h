@@ -7,6 +7,6 @@
 #include "Management.h"
 class Save:public Management{
 public:
-    void run(std::vector<std::string>& params);
+    void run(std::vector<std::string>& params,Ireader* reader,Iwriter* writer);
 };
 #endif //SRC_SAVE_H

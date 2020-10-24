@@ -3,8 +3,10 @@
 #include "Len.h"
 
 
-void Len::run(std::vector<std::string>& params) {
+void Len::run(std::vector<std::string>& params,Ireader* reader,Iwriter* writer) {
 
     DnaData* dnaData = getDnaDataByString(params[1]);
-    std::cout<< dnaData->getDna().length() <<std::endl;
+    std::string result = getNumAsString(dnaData->getDna().length()) + "\n";
+    writer->write(result.c_str());
+
 }

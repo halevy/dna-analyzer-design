@@ -3,7 +3,7 @@
 #include "../../Writer/file_writer.h"
 #include <sstream>
 
-void Save::run(std::vector<std::string>& params) {
+void Save::run(std::vector<std::string>& params,Ireader* reader,Iwriter* writer) {
 
     std::string dna,fileName;
 

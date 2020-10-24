@@ -10,7 +10,7 @@
 
 class Control: public Icommand {
 public:
-    void run(std::vector<std::string>& params) = 0;
+    void run(std::vector<std::string>& params,Ireader* reader,Iwriter* writer) = 0;
 };
 
 

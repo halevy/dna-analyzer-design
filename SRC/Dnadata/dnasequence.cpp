@@ -25,15 +25,9 @@ DnaSequence::Nucleotide& DnaSequence::Nucleotide::operator=(const Nucleotide& nu
 }
 DnaSequence::Nucleotide& DnaSequence::Nucleotide::operator=(const char c)
 {
-    try
-    {
-        if(!IsValidChar(c) && c != '\0')
-            throw std::invalid_argument("invalid letter");
-    }
-    catch(std::invalid_argument& e)
-    {
-        std::cout<<"Exception!"<<e.what()<<std::endl;
-    }
+    if(!IsValidChar(c) && c != '\0')
+        throw std::invalid_argument("invalid letter");
+
     m_c = c;
     return *this;
 }
@@ -41,7 +35,7 @@ DnaSequence::Nucleotide& DnaSequence::Nucleotide::operator=(const char c)
 DnaSequence::Nucleotide* DnaSequence::InitDna(const char* dnaSequence)
 {
     if(!IsValidDna(dnaSequence))
-        throw std::invalid_argument(" it is not a DNA");
+        throw std::invalid_argument("It is not a DNA");
 
     Nucleotide* dnaSequence_ = new Nucleotide[strlen(dnaSequence)+1];
     size_t i;

@@ -5,7 +5,7 @@
 #include <iostream>
 
 std::string CmdReader::read() {
-    std::cout << ">cmd>>>";
+
     std::string command;
     getline(std::cin,command);
     return command;

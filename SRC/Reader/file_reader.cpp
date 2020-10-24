@@ -9,7 +9,6 @@ FileReader::FileReader(const std::string& fileName):m_fileName(fileName){}
 
 std::string FileReader::read(){
 
-
     std::ifstream file;
     std::string data;
     try {

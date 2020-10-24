@@ -14,8 +14,8 @@
 
 class Creation:public Icommand{
 public:
-     void run(std::vector<std::string>& params) = 0;
-     void createNewDna(const std::string& dna, const std::string& name,char status);
+     void run(std::vector<std::string>& params,Ireader* reader,Iwriter* writer) = 0;
+     void createNewDna(const std::string& dna, const std::string& name,char status,Iwriter* writer);
      const std::string& getNameOfDna(std::string& name);
 };
 #endif //SRC_CREATION_H
