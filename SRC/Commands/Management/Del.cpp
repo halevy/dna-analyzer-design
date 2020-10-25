@@ -13,7 +13,7 @@ void Del::run(std::vector<std::string>& params,Ireader* reader,Iwriter* writer) 
 
     std::stringstream ss;
     ss << "Do you really want to delete " << dnaData->getName()
-    <<":"<< getDnaSequence(dnaData);
+    <<":"<< dnaData->getDna().GetData();
     writer->write(ss.str().c_str());
     answer = confirm(reader,writer);
 
